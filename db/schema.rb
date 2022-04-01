@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_03_31_042043) do
+ActiveRecord::Schema[7.0].define(version: 2022_03_31_194857) do
+  create_table "categories", force: :cascade do |t|
+    t.string "category_name"
+    t.string "category_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "customers", force: :cascade do |t|
     t.string "name"
     t.string "address"
