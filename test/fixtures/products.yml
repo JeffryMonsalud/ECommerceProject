@@ -2,6 +2,12 @@
 
 one:
   name: MyString
+  description: MyString
+  price: 9.99
+  quantity: 1
 
 two:
   name: MyString
+  description: MyString
+  price: 9.99
+  quantity: 1
