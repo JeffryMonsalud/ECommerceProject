@@ -1,18 +1,21 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Products</h1>
+<h1 class="product-title">Products</h1>
 
-<% @products.each do |product| %>
-  <div class="card bg-dark text-light" style="width: 18rem;">
-    <% if product.image.present? %>
-      <div class="card-img-top">
-        <img class="image" src="<%= image_tag product.image%>" alt="Card image cap">
-    <% end %>
-    <div class="card-body">
-      <div id="products">
-            <h5 class="card-title"><%= link_to product['name'], product%></h5>
-            <p class="card-text"> Description </p>
+<div class="row">
+  <% @products.each do |product| %>
+    <div class="col">
+      <div class="card" style="width: 18rem;">
+        <% if product.image.present? %>
+          <figure class="image">
+            <%= image_tag product.image, style: 'height: 200px; width: 100%;' %>
+          </figure>
+        <% end %>
+        <div class="card-body">
+            <h5 class="card-title"><%= link_to product['name'], product %></h5>
+            <strong class="card-text"> <%= product.price %></strong>
+        </div>
       </div>
     </div>
-  </div>
-<% end %>
+  <% end %>
+</div>

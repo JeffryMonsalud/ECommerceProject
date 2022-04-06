@@ -3,8 +3,12 @@
 }
 
 .home-container {
-    background-color: rgb(0, 204, 255);
 }
 
-.home-wrapper {
+.product-title {
+    margin-bottom: 20px;
+}
+
+.card {
+    margin-bottom: 20px;
 }

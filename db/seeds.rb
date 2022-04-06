@@ -1,6 +1,4 @@
 # require 'csv'
-Product.delete_all
-AdminUser.delete_all
 
 Product.create(
     name: 'Test'
