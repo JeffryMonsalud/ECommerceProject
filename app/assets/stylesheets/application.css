@@ -2,13 +2,23 @@
     font-size: 21pt;
 }
 
-.home-container {
-}
-
 .product-title {
     margin-bottom: 20px;
 }
 
 .card {
     margin-bottom: 20px;
+}
+
+.home-container {
+    margin-top: 25vh;
+}
+
+#home-page {
+    color: white;
+    background-color: #343A40;
+}
+
+.add-product-form {
+    margin-top: 20px;
 }
