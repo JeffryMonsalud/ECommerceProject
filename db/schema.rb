@@ -94,7 +94,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_08_045153) do
     t.string "description"
     t.decimal "price"
     t.integer "quantity"
-    t.string "category_id"
+    t.integer "category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
