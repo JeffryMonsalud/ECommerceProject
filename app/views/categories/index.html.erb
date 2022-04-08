@@ -1,14 +1,26 @@
 <p style="color: green"><%= notice %></p>
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">Home</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Category</li>
+  </ol>
+</nav>
 
-<h1>Categories</h1>
+<h3>Select a Category</h3>
 
-<div id="categories">
+<div class="row">
   <% @categories.each do |category| %>
-    <%= render category %>
-    <p>
-      <%= link_to "Show this category", category %>
-    </p>
+    <div class="col">
+      <div class="card" style="width: 18rem;">
+        <% if category.image.present? %>
+          <figure class="image">
+            <%= image_tag category.image, style: 'height: 200px; width: 100%;' %>
+          </figure>
+        <% end %>
+        <div class="card-body">
+            <h5 class="card-title"><a href="/products"><%= category.category_name %></a></h5>
+        </div>
+      </div>
+    </div>
   <% end %>
 </div>
-
-<%= link_to "New category", new_category_path %>
