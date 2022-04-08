@@ -1,6 +1,6 @@
 ActiveAdmin.register Category do
 
-    permit_params :category_name, :category_type, :image
+    permit_params :name, :category_type, :image
 
     form do |f|
       f.semantic_errors # shows error on :base
