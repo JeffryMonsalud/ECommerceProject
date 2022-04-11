@@ -11,4 +11,12 @@ AdminUser.create!(email: 'admin@example.com', password: 'password', password_con
 #     )
 # end
 
-puts "Created #{CategoryProduct.count} Product(s)."
+Product.create(
+    name: 'test',
+    description: 'testtest',
+    price: '23',
+    quantity: '33',
+    category_id: '1'
+)
+
+puts "Created #{Product.count} Product(s)."
