@@ -1,10 +1,25 @@
 <p style="color: green"><%= notice %></p>
-
-<%= render @product %>
-
-<div>
-  <%= link_to "Edit this product", edit_product_path(@product) %> |
-  <%= link_to "Back to products", products_path %>
-
-  <%= button_to "Destroy this product", @product, method: :delete %>
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/home">Home</a></li>
+    <li class="breadcrumb-item"><a href="/categories">Category</a></li>
+    <li class="breadcrumb-item"><a href="/products">Products</a></li>
+    <li class="breadcrumb-item active" aria-current="page"><%= @product.name %></li>
+  </ol>
+</nav>
+<div class="show-product-container">
+  <div class="product-image">
+    <%= image_tag @product.image, style: 'max-height: 320; width: 100%;' %>
+  </div>
+  <form>
+  <div class="product-description">
+    <h3 class="display-5" style="padding-top:10px; padding-left: 5px;"><%= @product.name %></h3>
+    <p class="card-title" style="padding-left: 5px;"><%= @product.description %></p>
+    <p class="card-title" style="padding-left: 5px; padding-bottom: 5px;">$<%= @product.price %></p>
+  </div>
+  <div class="cart-button">
+    <input class="btn btn-primary" type="button" value="Add to Cart">
+    <input class="btn btn-primary" type="button" value="Buy Now">
+  </div>
+  </form>
 </div>

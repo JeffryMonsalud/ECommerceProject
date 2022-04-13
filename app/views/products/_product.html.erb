@@ -1,16 +1,14 @@
 <div id="<%= dom_id product %>">
 
   <% if product.image.present? %>
-    <p> Image </p>
+    <p> <%= image_tag product.image %> </p>
   <% end %>
 
   <p>
-    <strong>Name:</strong>
-    <%= product.name %>
+    <h3><%= product.name %></h3>
   </p>
 
   <p>
-    <strong>Description:</strong>
     <%= product.description %>
   </p>
 
