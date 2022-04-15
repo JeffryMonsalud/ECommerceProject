@@ -49,3 +49,14 @@
     <% end %>
   <% end %>
 </div>
+
+<% @products.each do |product| %>
+    <div class="product-category">
+      Category:
+      <%= product.category.name %>
+    </div>
+    <div class="product-text">
+      <h2 class="product-title"> <%= product.name %></h2>
+      <h3 class="product-price">£<%= product.price %></h3>
+    </div>
+<% end %>

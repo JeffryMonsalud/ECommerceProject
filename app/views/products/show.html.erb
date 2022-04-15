@@ -15,6 +15,7 @@
   <div class="product-description">
     <h3 class="display-5" style="padding-top:10px; padding-left: 5px;"><%= @product.name %></h3>
     <p class="card-title" style="padding-left: 5px;"><%= @product.description %></p>
+    <a class="card-title" href="/categories" style="padding-left: 5px;">View More Products In <%= @product.category.name %></a>
     <p class="card-title" style="padding-left: 5px; padding-bottom: 5px;">$<%= @product.price %></p>
   </div>
   <div class="cart-button">

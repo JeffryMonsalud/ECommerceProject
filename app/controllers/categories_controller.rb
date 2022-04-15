@@ -8,6 +8,7 @@ class CategoriesController < ApplicationController
 
   # GET /categories/1 or /categories/1.json
   def show
+    @categories = Category.friendly.where(params[:name])
   end
 
   # GET /categories/new

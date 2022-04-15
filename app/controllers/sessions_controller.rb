@@ -1,8 +1,8 @@
 class SessionsController < ApplicationController
 
     def create
-        @user = User.authenticate(login_params[:email], login_params[:password])   
-        if @user && user.authenticate(login_params[:password])
+        @user = User.find_by(email: login_params[:email])   
+        if @user && @user.authenticate(login_params[:password])
             session[:user_id] = @user.id 
             redirect_to '/categories'    
         else

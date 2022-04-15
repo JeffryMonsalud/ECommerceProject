@@ -15,9 +15,11 @@
         <li class="nav-item">
           <a class="nav-link" href="/contact">Contact</a>
         </li>
+        <% if current_user == "JeffryM" %>
         <li class="nav-item">
-          <a class="nav-link" href="/add_product">Create Product</a>
+          <a class="nav-link" href="/add_product" disabled>Create Product</a>
         </li>
+        <% end %>
       </div>
     </div>
     <ul class="nav justify-content-end">
