@@ -6,7 +6,11 @@
   </ol>
 </nav>
 
-<h3>Select a Category</h3>
+<div class="category_title" style="margin-bottom: 10px;">
+  <h3>Select a Category 
+  <a href="/products"><button class="btn btn-sm btn-outline-success my-2 my-sm-0" type="submit" style="border: 1px solid black; color: black; width: 20%;">View All Products</button></a>
+  </h3>
+</div>
 
 <div class="row">
   <% @categories.each do |category| %>
@@ -18,7 +22,7 @@
           </figure>
         <% end %>
         <div class="card-body">
-            <h5 class="card-title"><a href="/products/?test"><%= category.name %></a></h5>
+            <h5 class="card-title"><%= link_to category.name, category %></h5>
         </div>
       </div>
     </div>

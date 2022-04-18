@@ -1,10 +1,50 @@
 <p style="color: green"><%= notice %></p>
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">Home</a></li>
+    <li class="breadcrumb-item active" aria-current="page"><%= @category.products.name %></li>
+  </ol>
+</nav>
+<h1 class="product-title">Products</h1>
 
-<%= render @category %>
+<h4 class="product-title"> Available Stock </h4>
+<div class="row">
+  <% @products.each do |product| %>
+    <% if product.quantity > 0 %>
+        <div class="col">
+          <div class="card" style="width: 18rem;">
+            <% if product.image.present? %>
+              <figure class="image">
+                <%= image_tag product.image, style: 'height: 200px; width: 100%;' %>
+              </figure>
+            <% end %>
+            <div class="card-body">
+                <h5 class="card-title"><%= link_to product['name'], product %></h5> 
+                <strong class="card-text"> $<%= product.price %></strong>
+            </div>
+          </div>
+        </div>
+    <% end %>
+  <% end %>
+</div>
 
-<div>
-  <%= link_to "Edit this category", edit_category_path(@category) %> |
-  <%= link_to "Back to categories", categories_path %>
-
-  <%= button_to "Destroy this category", @category, method: :delete %>
+<div class="row">
+  <% @products.each do |product| %>
+    <% if product.quantity < 1 %>
+      <h4 class="product-title"> Out of Stock </h4>
+        <div class="col">
+          <div class="card" style="width: 18rem;">
+            <% if product.image.present? %>
+              <figure class="image">
+                <%= image_tag product.image, style: 'height: 200px; width: 100%;' %>
+              </figure>
+            <% end %>
+            <div class="card-body">
+                <h5 class="card-title"><%= link_to product['name'], product %></h5>
+                <strong class="card-text"> $<%= product.price %></strong>
+            </div>
+          </div>
+        </div>
+    <% end %>
+  <% end %>
 </div>

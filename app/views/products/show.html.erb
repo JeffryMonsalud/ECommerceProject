@@ -1,9 +1,7 @@
 <p style="color: green"><%= notice %></p>
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="/home">Home</a></li>
-    <li class="breadcrumb-item"><a href="/categories">Category</a></li>
-    <li class="breadcrumb-item"><a href="/products">Products</a></li>
+    <li class="breadcrumb-item"><a href="/categories">Home</a></li>
     <li class="breadcrumb-item active" aria-current="page"><%= @product.name %></li>
   </ol>
 </nav>
@@ -15,7 +13,6 @@
   <div class="product-description">
     <h3 class="display-5" style="padding-top:10px; padding-left: 5px;"><%= @product.name %></h3>
     <p class="card-title" style="padding-left: 5px;"><%= @product.description %></p>
-    <a class="card-title" href="/categories" style="padding-left: 5px;">View More Products In <%= @product.category.name %></a>
     <p class="card-title" style="padding-left: 5px; padding-bottom: 5px;">$<%= @product.price %></p>
   </div>
   <div class="cart-button">

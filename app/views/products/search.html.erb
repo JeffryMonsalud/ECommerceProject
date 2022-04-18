@@ -1,0 +1,30 @@
+<nav aria-label="breadcrumb" style="margin-top: 15px;">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">Home</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Search</li>
+  </ol>
+</nav>
+
+<h3 style="margin-top: 10px;">Search Results</h3>
+<p> Found (<%= @products.count %>) Product(s)</p>
+
+<div class="row">
+    <% @products.each do |product| %>
+        <% if product.quantity < 1 %>
+        <% else %>
+        <div class="col">
+            <div class="card" style="width: 18rem;">
+                <% if product.image.present? %>
+                <figure class="image">
+                    <%= image_tag product.image, style: 'height: 200px; width: 100%;' %>
+                </figure>
+                <% end %>
+                <div class="card-body">
+                    <h5 class="card-title"><%= link_to product['name'], product %></h5>
+                    <strong class="card-text"> $<%= product.price %></strong>
+                </div>
+            </div>
+        </div>
+        <% end %>
+    <% end %>
+</div>
