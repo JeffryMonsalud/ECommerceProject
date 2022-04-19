@@ -1,0 +1,22 @@
+<body>
+<nav aria-label="breadcrumb" style="margin-top: 10px;">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">Home</a></li>
+    <li class="breadcrumb-item active">All Products</li>
+    <li class="breadcrumb-item active" aria-current="page">Latest Products</li>
+  </ol>
+</nav>
+<div class="justify content center" style="margin-bottom: 10px;">
+    <h2 class="category_title"> Newest Products </h2>
+    <a>Posted Within 3 days</a>
+</div> 
+
+<div class="row">
+    <% @products.each do |product| %>
+    <% if product.count > 0 %>
+      <%= render product %> 
+    <% else %>
+      <p>No new posts within 3 days</p>
+    <% end %>
+  <% end %>
+</div>

@@ -1,25 +1,13 @@
-<div id="<%= dom_id product %>">
-
-  <% if product.image.present? %>
-    <p> <%= image_tag product.image %> </p>
-  <% end %>
-
-  <p>
-    <h3><%= product.name %></h3>
-  </p>
-
-  <p>
-    <%= product.description %>
-  </p>
-
-  <p>
-    <strong>Price:</strong>
-    <%= product.price %>
-  </p>
-
-  <p>
-    <strong>Quantity:</strong>
-    <%= product.quantity %>
-  </p>
-
+<div class="col">
+  <div class="card" style="width: 18rem;">
+    <% if product.image.present? %>
+      <figure class="image">
+        <%= image_tag product.image, style: 'height: 200px; width: 100%;' %>
+      </figure>
+    <% end %>
+    <div class="card-body">
+        <h5 class="card-title"><%= link_to product['name'], product %></h5>
+        <strong class="card-text"> $<%= product.price %></strong>
+    </div>
+  </div>
 </div>

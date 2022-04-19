@@ -1,11 +1,5 @@
 class ProductsController < InheritedResources::Base
 
-  # private
-
-  #   def product_params
-  #     params.require(:product).permit(:name, :description, :price, :quantity)
-  #   end
-
   def index
     @products = Product.all
   end
@@ -14,5 +8,10 @@ class ProductsController < InheritedResources::Base
     @products = Product.where("name LIKE ?", "%" + params[:name] + "%")
   end
 
+  def newest
+    @today = Date.today
+    @daterange = 3.days.ago
+    @products = Product.all.where(:created_at => @today.beginning_of_day..@daterange.end_of_day)
+  end
 
 end

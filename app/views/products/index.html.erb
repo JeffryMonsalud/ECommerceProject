@@ -5,24 +5,13 @@
     <li class="breadcrumb-item active" aria-current="page">All Products</li>
   </ol>
 </nav>
-<div class="justify content center">
+<div class="justify content center" style="margin-bottom: 10px;">
     <h2 class="category_title"> All Products </h2>
+    <a href="/newest">View Newest Products</a>
 </div> 
 
 <div class="row">
-    <% @products.each do |product| %>
-    <div class="col">
-      <div class="card" style="width: 18rem;">
-        <% if product.image.present? %>
-          <figure class="image">
-            <%= image_tag product.image, style: 'height: 200px; width: 100%;' %>
-          </figure>
-        <% end %>
-        <div class="card-body">
-            <h5 class="card-title"><%= link_to product['name'], product %></h5>
-            <strong class="card-text"> $<%= product.price %></strong>
-        </div>
-      </div>
-    </div>
-  <% end %>
+<% @products.each do |product| %>
+  <%= render product %> 
+<% end %>
 </div>

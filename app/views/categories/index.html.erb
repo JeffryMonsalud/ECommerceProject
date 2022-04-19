@@ -14,17 +14,6 @@
 
 <div class="row">
   <% @categories.each do |category| %>
-    <div class="col">
-      <div class="card" style="width: 18rem;">
-        <% if category.image.present? %>
-          <figure class="image">
-            <%= image_tag category.image, style: 'height: 200px; width: 100%;' %>
-          </figure>
-        <% end %>
-        <div class="card-body">
-            <h5 class="card-title"><%= link_to category.name, category %></h5>
-        </div>
-      </div>
-    </div>
+    <%= render category%>
   <% end %>
 </div>

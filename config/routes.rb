@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get 'contact' => 'pages#contact', as: 'contact'
   get 'add_product' => 'pages#add_product', as: 'add_product'
   get 'return_product' => 'categories#show', as: 'return_product'
+  get 'newest' => 'products#newest', as: 'newest'
 
   # Login Configurations
   get 'login' => 'users#login', as: 'login'
