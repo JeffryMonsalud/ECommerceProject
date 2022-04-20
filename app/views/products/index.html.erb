@@ -6,12 +6,19 @@
   </ol>
 </nav>
 <div class="justify content center" style="margin-bottom: 10px;">
-    <h2 class="category_title"> All Products </h2>
+    <h2 class="category_title"> All Products</h2>
     <a href="/newest">View Newest Products</a>
+    <a>| Sorted By Latest </a>
+
 </div> 
+
+
+<%= paginate @products %>
 
 <div class="row">
 <% @products.each do |product| %>
   <%= render product %> 
 <% end %>
 </div>
+
+<%= paginate @products %>

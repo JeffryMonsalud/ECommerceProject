@@ -1,11 +1,11 @@
 class ProductsController < InheritedResources::Base
 
   def index
-    @products = Product.all
+    @products = Product.all.order(created_at: :desc).page(params[:page]).per(9)
   end
 
   def search
-    @products = Product.where("name LIKE ?", "%" + params[:name] + "%")
+    @products = Product.where("name LIKE ?", "%" + params[:name] + "%").page(params[:page]).per(9)
   end
 
   def newest

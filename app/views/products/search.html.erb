@@ -8,6 +8,8 @@
 <h3 style="margin-top: 10px;">Search Results</h3>
 <p> Found (<%= @products.count %>) Product(s)</p>
 
+<%= paginate @products %>
+
 <div class="row">
     <% @products.each do |product| %>
         <% if product.quantity < 1 %>
@@ -28,3 +30,5 @@
         <% end %>
     <% end %>
 </div>
+
+<%= paginate @products %>

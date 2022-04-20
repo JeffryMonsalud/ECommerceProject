@@ -11,6 +11,8 @@
     <a>Posted Within 3 days</a>
 </div> 
 
+<%= paginate @products %>
+
 <div class="row">
     <% @products.each do |product| %>
     <% if product.count > 0 %>
@@ -20,3 +22,5 @@
     <% end %>
   <% end %>
 </div>
+
+<%= paginate @products %>
