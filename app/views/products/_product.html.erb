@@ -8,6 +8,11 @@
     <div class="card-body">
         <h5 class="card-title"><%= link_to product['name'], product %></h5>
         <strong class="card-text"> $<%= product.price %></strong>
+          <% if product.quantity > 0 %>
+          <p> In stock </p>
+          <% else %>
+          <p> Unavailable </p>
+          <% end %>
     </div>
   </div>
 </div>

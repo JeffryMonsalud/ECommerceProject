@@ -9,7 +9,7 @@ class CategoriesController < ApplicationController
   # GET /categories/1 or /categories/1.json
   def show
     @category = Category.find(params[:id])
-    @products = @category.products.page(params[:page]).per(9)
+    @products = @category.products.page(params[:page]).per(6)
   end
 
   # GET /categories/new
