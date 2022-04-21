@@ -6,13 +6,22 @@
       </figure>
     <% end %>
     <div class="card-body">
-        <h5 class="card-title"><%= link_to product['name'], product %></h5>
-        <strong class="card-text"> $<%= product.price %></strong>
-          <% if product.quantity > 0 %>
-          <p> In stock </p>
+      <h5 class="card-title"><%= link_to product['name'], product %></h5>
+      <strong class="card-text"> $<%= product.price %></strong>
+        <% if product.quantity > 0 %>
+        <a> In stock </a><br>
+          <% if user_signed_in? %>
+              <% if @cart.include?(product) %>
+                <%= button_to "Remove from Cart", remove_from_cart_path(product), method: :delete %>
+              <% else %>
+                <%= button_to "Add to Cart", add_to_cart_path(product) %>
+              <% end %>
           <% else %>
-          <p> Unavailable </p>
+          <a> Sign in to add to cart </a>
           <% end %>
+        <% else %>
+          <p> Unavailable </p>
+        <% end %>
     </div>
   </div>
 </div>
