@@ -15,9 +15,15 @@
         <li class="nav-item">
           <a class="nav-link" href="/contact">Contact</a>
         </li>
+        <% if @cart.count > 0 %>
+        <li class="nav-item">
+          <a class="nav-link" href="/cart">View Cart (<%= @cart.count %>)</a>
+        </li>
+        <% else %>
         <li class="nav-item">
           <a class="nav-link" href="/cart">View Cart</a>
         </li>
+        <% end %>
       </div>
     </div>
     <ul class="nav justify-content-end">
