@@ -28,19 +28,15 @@
     </div>
     <ul class="nav justify-content-end">
     <%# If user is signed in, show logout but if not, show sign in %>
-      <% if user_signed_in? %>
-      <form class="form-inline" action="/search">
-        <input class="form-control mr-sm-2" type="search" name="name" placeholder="Search for Product" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="margin-right: 10px;">Search</button>
-      </form>
-        <li class="nav-item dropdown" style=" margin-right: 10px;">
-          <a class="btn btn-outline-light" href="/signout" style="width: 120%;">Logout</a>
-        </li>
-      <% else %>
       <form class="form-inline" action="/search">
         <input class="form-control mr-sm-2" type="text" name="name" placeholder="Search for Product" aria-label="Search">
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="margin-right: 10px;">Search</button>
       </form>
+      <% if user_signed_in? %>
+        <li class="nav-item dropdown" style=" margin-right: 10px;">
+          <a class="btn btn-outline-light" href="/signout" style="width: 120%;">Logout</a>
+        </li>
+      <% else %>
         <li class="nav-item dropdown" style=" margin-right: 10px;">
           <a class="btn btn-outline-light" href="/login" style="width: 120%;">Login</a>
         </li>

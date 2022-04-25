@@ -5,7 +5,8 @@ class ProductsController < InheritedResources::Base
   end
 
   def search
-    @products = Product.where("name LIKE ?", "%" + params[:name] + "%").page(params[:page]).per(9)
+    @products = Product.where("name LIKE ? AND category_id = ?", "%" + params[:name] + "%", params[:category]).page(params[:page]).per(9)
+    # @products = Product.where("name LIKE ?", "%" + params[:name] + "%").page(params[:page]).per(9)
   end
 
   def newest

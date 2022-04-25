@@ -12,6 +12,18 @@
   </h3>
 </div>
 
+<div id="category-search">
+  <form class="form-inline" action="/search">
+    <select name="category">
+      <% @categories.each do |option|%>
+        <option value="<%= option.id %>"><%= option.name %></option>
+      <% end %>
+    </select>
+    <input class="form-control mr-sm-2" type="text" name="name" placeholder="Search for Product" aria-label="Search">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="margin-right: 10px;">Search</button>
+  </form>
+</div>
+
 <div class="row">
   <% @categories.each do |category| %>
     <%= render category%>
