@@ -12,7 +12,8 @@ class ProductsController < InheritedResources::Base
   def newest
     @today = Date.today
     @daterange = 3.days.ago
-    @products = Product.all.where(:created_at => @today.beginning_of_day..@daterange.end_of_day)
+    @products = Product.where(:created_at => @today.beginning_of_day..@daterange.end_of_day).page(params[:page]).per(9)
+    
   end
 
   def add_to_cart
