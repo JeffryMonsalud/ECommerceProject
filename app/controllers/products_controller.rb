@@ -17,6 +17,8 @@ class ProductsController < InheritedResources::Base
 
   def add_to_cart
     id = params[:id].to_i
+    quantity = params[:quantity].to_i
+    session[:productquantity] << quantity
     session[:cart] << id unless session[:cart].include?(id)
     redirect_back(fallback_location: root_path)
   end

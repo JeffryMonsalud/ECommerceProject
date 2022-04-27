@@ -18,6 +18,7 @@ before_action :load_cart
     end
 
     def initialize_session
+        session[:productquantity] ||= []
         session[:cart] ||= []
     end
 
