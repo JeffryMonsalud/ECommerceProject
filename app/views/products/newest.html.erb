@@ -15,7 +15,7 @@
 
 <div class="row">
     <% @products.each do |product| %>
-    <% if product.count > 0 %>
+    <% if product %>
       <%= render product %> 
     <% else %>
       <p>No new posts within 3 days</p>
