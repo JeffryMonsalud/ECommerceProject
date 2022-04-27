@@ -6,24 +6,26 @@
     </button>
    <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <div class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" href="/categories">Shop</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/about">About Us</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/contact">Contact</a>
-        </li>
-        <% if @cart.count > 0 %>
-        <li class="nav-item">
-          <a class="nav-link" href="/cart">View Cart (<%= @cart.count %>)</a>
-        </li>
-        <% else %>
-        <li class="nav-item">
-          <a class="nav-link" href="/cart">View Cart</a>
-        </li>
-        <% end %>
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/categories">Shop</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/about">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/contact">Contact</a>
+          </li>
+          <% if @cart.count > 0 %>
+          <li class="nav-item">
+            <a class="nav-link" href="/cart">View Cart (<%= @cart.count %>)</a>
+          </li>
+          <% else %>
+          <li class="nav-item">
+            <a class="nav-link" href="/cart">View Cart</a>
+          </li>
+          <% end %>
+        </ul>
       </div>
     </div>
     <div class="nav justify-content-end">
@@ -32,15 +34,17 @@
         <input class="form-control mr-sm-2" type="text" name="name" placeholder="Search for Product" aria-label="Search">
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="margin-right: 10px;">Search</button>
       </form>
-      <% if user_signed_in? %>
-        <li class="nav-item dropdown" style=" margin-right: 10px;">
-          <a class="btn btn-outline-light" href="/signout" style="width: 120%;">Logout</a>
-        </li>
-      <% else %>
-        <li class="nav-item dropdown" style=" margin-right: 10px;">
-          <a class="btn btn-outline-light" href="/login" style="width: 120%;">Login</a>
-        </li>
-      <% end %>
+      <ul class="navbar-nav mr-auto">
+        <% if user_signed_in? %>
+          <li class="nav-item dropdown" style=" margin-right: 10px;">
+            <a class="btn btn-outline-light" href="/signout" style="width: 120%;">Logout</a>
+          </li>
+        <% else %>
+          <li class="nav-item dropdown" style=" margin-right: 10px;">
+            <a class="btn btn-outline-light" href="/login" style="width: 120%;">Login</a>
+          </li>
+        <% end %>
+      </ul>
     </div>
   </div>
 </nav>

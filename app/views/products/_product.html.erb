@@ -2,7 +2,7 @@
   <div class="card" style="width: 18rem;">
     <% if product.image.present? %>
       <figure class="image">
-        <%= image_tag product.image, style: 'height: 200px; width: 100%;' %>
+        <%= image_tag product.image, style: 'height: 200px; width: 100%;', alt: 'image' %>
       </figure>
     <% end %>
     <div class="card-body">
