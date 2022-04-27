@@ -93,3 +93,13 @@
 .pagination a:hover, .pagination a:focus {
     text-decoration: underline; 
 }
+
+.invoice {
+    width: 60%;
+    margin: auto;
+    background-color: rgb(255, 255, 255);
+}
+
+.invoiceBody {
+    padding: 20px;
+}

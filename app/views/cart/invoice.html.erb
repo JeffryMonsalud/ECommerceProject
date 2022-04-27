@@ -1,0 +1,40 @@
+<nav aria-label="breadcrumb" style="margin-top: 10px;">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/products">Products</a></li>
+    <li class="breadcrumb-item active" aria-current="page">View Cart</li>
+  </ol>
+</nav>
+
+<section class="h-100" style="margin: auto; border: 1px solid black; width: 40%; margin-top: 20px;">
+  <div class="invoice-container">
+
+        <%# Declare Variables %>
+        <% @total = 0 %>
+        <% @quantity = 1 %>
+        <% @quantityAmount = 0 %>
+
+        <%# Output each item on its own row %>
+        <div class="invoice">
+            <div class="invoiceBody">
+                <% @cart.each do |product| %>
+
+                <%= hidden_field_tag(:product_id, product.id) %>
+
+                <div class="row d-fex justify-content-between align-items-center">
+                    <div class="col">
+                        <a><%= product.name %> $<%= product.price%></a>
+                    </div>
+                </div>
+
+                <% end %>
+            </div>
+            <div class="invoiceTotal">
+                <% @cart.each do |product| %>
+                    <% @total += (product.price) %>
+                <% end %>
+                <p class="invoiceTotal">Total: $<%= @total%></p>
+            </div>
+        </div>
+
+  </div>
+</section>

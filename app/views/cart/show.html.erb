@@ -19,6 +19,11 @@
           </div>
         </div>
 
+        <%# Declare Variables %>
+        <% @total = 0 %>
+        <% @quantity = 1 %>
+        <% @quantityAmount = 0 %>
+
         <%# Output each item on its own row %>
         <% @cart.each do |product| %>
             <div class="card rounded-3 mb-4">
@@ -41,14 +46,10 @@
                         <p class="lead fw-normal mb-2"><%= product.name %></p>
                     </div>
 
-                    <%# Produce Price %>
-                    <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
-                        <h5 class="mb-0">$<%= product.price %></h5>
-                    </div>
-
-                    <%# Produce Quantity %>
+                    <%# Produce Price and Quantity %>
                     <div class="col-md-3 col-lg-3 col-xl-3">
-                        <input type="number" name="productquantity" value="<%= session[:productquantity][session[:cart].index(product.id)]%>" onChange="updatequantity">
+                        <h5 class="mb-0">$<%= product.price %></h5>
+                        <input type="number" name="productquantity" value="<%= session[:productquantity][session[:cart].index(product.id)]%>" onChange="updatequantity" style="width: 30%">
                     </div>
 
                     <%# Product Remove Button %>
@@ -56,7 +57,7 @@
                         <a href="#!" class="text-danger"><i class="fas fa-trash fa-lg"></i></a>
                         <a><%= button_to "Remove", remove_from_cart_path(product), method: :delete %></a>
                     </div>
-              
+
                     </div>
                 </div>
             </div>
@@ -64,11 +65,16 @@
 
         <div class="card">
           <div class="card-body">
+          <% @cart.each do |product| %>
+            <% @total += (product.price) %>
+          <% end %>
+            <h5 class="mb-0">Total: $<%= @total%></h5><br>
             <% if user_signed_in? %>
-                <%= button_to "Proceed to Pay", checkout_create_path, 
+                <%# <%= button_to "Proceed to Pay", checkout_create_path, 
                 remote: true, 
                 date: { disable_with: "validating..."}, 
-                class: "btn btn-warning btn-block btn-lg" %>
+                class: "btn btn-warning btn-block btn-lg" %> 
+                <a href="/invoice"><button type="button" class="btn btn-warning btn-block btn-lg">Proceed to Pay</button></a>
             <% else %>
                 <button type="button" class="btn btn-warning btn-block btn-lg" disabled>Proceed to Pay</button>
                 <p> Must be signed into an account. Login <a href="/login">here</a></p>

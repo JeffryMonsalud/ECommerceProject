@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get 'return_product' => 'categories#show', as: 'return_product'
   get 'newest' => 'products#newest', as: 'newest'
   get 'cart' => 'cart#show', as: 'cart'
+  get 'invoice' => 'cart#invoice', as: 'invoice'
 
   # Login Configurations
   get 'login' => 'users#login', as: 'login'

@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
     <a class="navbar-brand" href="/">Yonaka</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
       <span class="navbar-toggler-icon"></span>
     </button>
    <div class="collapse navbar-collapse" id="navbarNavDropdown">
@@ -26,7 +26,7 @@
         <% end %>
       </div>
     </div>
-    <ul class="nav justify-content-end">
+    <div class="nav justify-content-end">
     <%# If user is signed in, show logout but if not, show sign in %>
       <form class="form-inline" action="/search">
         <input class="form-control mr-sm-2" type="text" name="name" placeholder="Search for Product" aria-label="Search">
@@ -41,6 +41,6 @@
           <a class="btn btn-outline-light" href="/login" style="width: 120%;">Login</a>
         </li>
       <% end %>
-    </ul>
+    </div>
   </div>
 </nav>
